@@ -1,0 +1,142 @@
+.content {
+    border-radius: 8px;
+    border: solid 1px rgb(236, 236, 236);
+    padding-bottom: 20px;
+    margin-bottom: 70px;
+}
+
+
+.content__dark {
+    border-radius: 8px;
+    border: solid 1px #171717;
+    padding-bottom: 20px;
+    margin-bottom: 70px;
+}
+
+
+.title__wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.title {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.title__icon {
+    position: relative;
+    top: 44px;
+}
+
+
+.hr {
+    background-color: rgb(236, 236, 236);
+    color: rgb(236, 236, 236);
+    height: 1px;
+    width: 90%;
+    border: none;
+    margin: 15px auto
+}
+
+
+.hr__dark {
+    background-color: #171717;
+    color: #171717;
+    height: 1px;
+    width: 90%;
+    border: none;
+    margin: 15px auto
+}
+
+
+.event {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(236, 236, 236);
+    width: 90%;
+    height: auto;
+    margin: 25px auto;
+    border-radius: 10px;
+}
+
+
+.event__dark {
+    background-color: #171717;
+    border: 1px solid #171717;
+    width: 90%;
+    height: auto;
+    margin: 25px auto;
+    border-radius: 10px;
+}
+
+
+.event__title {
+    font-weight: bold;
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 0
+}
+
+
+
+.inf {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1fr, 4);
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+
+.img {
+    display: block;
+    width: 90%;
+    height: 50%;
+    margin: 0 auto;
+}
+
+
+.organizer, .address, .start__date,  .end__date{
+    font-size: .8rem
+}
+
+
+@media screen and (max-width: 564px) {
+    
+    
+    .organizer, .address, .start__date,  .end__date{
+        font-size: .6rem
+    }
+
+
+    .title {
+        font-size: .8rem
+    }
+
+
+    .title__icon {
+        position: relative;
+        top: 41px;
+    }
+}
+
+
+@media screen and (max-width: 310px) {
+    .title {
+        margin-top: 2px;
+        font-size: .7rem
+    }
+}
+
+
+
+@media screen {
+    .inf {
+        font-size: .4rem;
+    }
+}

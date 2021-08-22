@@ -1,0 +1,46 @@
+.cats__wrapper { 
+    justify-self: end;
+}
+
+
+.cats {
+    display: flex;
+    flex-direction: row;
+    justify-self: end;
+}
+
+
+.cats_item {
+    position: relative;
+    top: 24px;
+    margin-left: 45px;
+    font-size: .8rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.adaptive__menu__icon__wrapper {
+    display: none;
+}
+
+
+@media screen and (max-width: 1293px) {
+    .cats {
+        display: end;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .cats {
+        display: none;
+    }
+
+    .adaptive__menu__icon__wrapper {
+        position: relative;
+        top: 22px;
+        display: grid;
+        justify-self: end;
+    }
+}

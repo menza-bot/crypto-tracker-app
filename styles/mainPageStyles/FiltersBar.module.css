@@ -1,0 +1,165 @@
+.bar {
+    padding: 0 0 25px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.second__slice {
+    position: relative;
+    left: 5px;
+    justify-self: end;
+}
+
+
+.item {
+    background-color: rgb(240, 240, 240);
+    margin-right: 5px;
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-size: .8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.toggle {
+    background-color: rgb(240, 240, 240);
+    margin-right: 5px;
+    padding: 7px 5px;
+    border-radius: 6px;
+    font-size: .8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.toggle__darktheme {
+    background-color: #17171A;
+}
+
+
+.item__darktheme {
+    background-color: #17171A;
+}
+
+
+.popup {
+    position: absolute;
+    background-color: rgb(240, 240, 240);
+    border-radius: 7px;
+    list-style: none;
+    z-index: 10;
+}
+
+
+.popup__dark {
+    position: absolute;
+    background-color: #17171A;
+    border-radius: 7px;
+    list-style: none;
+    z-index: 10;
+}
+
+
+.pagesize__popup {
+    margin-top: 10px;
+    margin-left: 85px;
+    cursor: pointer;
+}
+
+
+.currency__popup {
+    margin-top: 10px;
+    margin-left: 193px;
+    cursor: pointer;
+}
+
+
+.popup__item {
+    font-size: .8rem;
+    font-weight: bold;
+    padding: 7px;
+}
+
+
+.rows__button__active {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 3px 0;
+}
+
+
+.tiles__button__active {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 3px 0;
+}
+
+
+.rows__icon {
+    position: relative;
+    top: 5px;
+}
+
+
+.tiles__icon {
+    position: relative;
+    top: 5px
+}
+
+
+.rows__icon__darktheme, .tiles__icon__darktheme {
+    color: #17171A
+}
+
+
+.global__data, .toggle {
+    position: relative;
+    bottom: 5px
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    
+}
+
+
+@media only screen and (max-width: 993px) {
+    .global__data {
+        display: none
+    }
+
+
+    .bar {
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+    }
+}
+
+
+@media only screen and (max-width: 320px) {
+    .bar {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+    }
+
+
+    .second__slice {
+        justify-self: start;
+        position: relative;
+    }
+
+
+    .first__slice {
+        position: relative;
+        left: 5px;
+    }
+}
+
+
+

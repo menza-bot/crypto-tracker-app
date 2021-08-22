@@ -1,0 +1,47 @@
+
+
+.content {
+    font-size: .7rem;
+    font-weight: bold;
+}
+
+
+.content__item {
+    position: relative;
+    top: 10px;
+    color: gray;
+    padding-right: 16px;
+}
+
+
+.dominance {
+    position: relative;
+    top: 10px;
+    color: gray;
+}
+
+
+.content__item__value {
+    color: rgb(55, 178, 255)
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .generalstats {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+
+    .generalstats::-webkit-scrollbar {
+        display: none; 
+    }
+
+
+    .content {
+        width: 680px;
+        height: 35px;
+    }
+}

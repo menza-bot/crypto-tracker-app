@@ -1,0 +1,129 @@
+.wrapper__chart {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.chart__nav {
+    display: grid;
+    padding: 15px 0 35px 0;
+    grid-template-columns: 5fr 1fr;
+    width: 97%;
+}
+
+
+.title {
+    position: relative;
+    top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold
+}
+
+
+.switchers {
+    position: relative;
+    top: 5px;
+    justify-self: end;
+    position: relative;
+    right: 5px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(236, 236, 236);
+    border-radius: 8px;
+    padding: 12px 6px;
+}
+
+
+.switchers__dark {
+    position: relative;
+    top: 5px;
+    justify-self: end;
+    position: relative;
+    right: 5px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #2D3042;
+    border-radius: 8px;
+    padding: 12px 6px;
+}
+
+
+.switcher {
+    position: relative;
+    bottom: 1px;
+    padding: 10px;
+    font-size: .7rem;
+    font-weight: bold;
+    color: rgb(139, 139, 139);
+    cursor: pointer;
+    transition: .4s;
+}
+
+
+.switcher__dark {
+    position: relative;
+    bottom: 1px;
+    padding: 10px;
+    font-size: .7rem;
+    font-weight: bold;
+    color: rgb(230, 230, 230);
+    cursor: pointer;
+    transition: .4s;
+}
+
+
+.active {
+    background-color: white;
+    border-radius: 6px;
+}
+
+
+.active__dark {
+    background-color: #20222E;
+    border-radius: 6px;
+}
+
+
+.passive {
+    background-color: none;
+}
+
+
+@media screen and (max-width: 992px) {
+    .chart__nav {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 510px) {
+
+    .chart__nav {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+
+    .title {
+        display: none;
+    }
+
+
+    .switcher, .switcher__dark {
+        padding: 6px;
+    }
+
+
+    .switchers, .switchers__dark {
+        justify-self: start;
+        position: relative;
+        left: 2px;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .title {
+        font-size: .7rem
+    }
+}
+
+

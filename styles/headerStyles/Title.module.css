@@ -1,0 +1,27 @@
+.link {
+    justify-self: start;
+}
+
+
+.icon {
+    position: relative;
+    right: 3px;
+    top: 18px
+}
+
+
+.text {
+    position: relative;
+    top: 6px;
+    left: 5px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+@media screen and (max-width: 300px) {
+    .text {
+        display: none;
+    }
+}

@@ -1,0 +1,120 @@
+.wrapper__swap {
+    justify-self: end;
+    width: 100%
+}
+
+
+.swap {
+    position: relative;
+    top: 19px;
+}
+
+
+.crypto__tile {
+    display: grid;
+    grid-template-columns: .6fr 2fr 2fr;
+    padding: 20px 24px;
+    background-color: rgb(255, 255, 255);
+    border: 1px rgb(236, 236, 236) solid;
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+}
+
+
+.crypto__tile__dark {
+    display: grid;
+    grid-template-columns: .6fr 2fr 2fr;
+    padding: 20px 24px;
+    background-color: #2D3042;
+    border: 1px #20222E solid;
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+}
+
+
+.fiat__tile {
+    display: grid;
+    grid-template-columns: .6fr 2fr 2fr;
+    padding: 20px 24px;
+    background-color: rgb(250, 250, 250);
+    border: 1px rgb(236, 236, 236) solid;
+    border-radius: 0 0 15px 15px;
+}
+
+
+.fiat__tile__dark {
+    display: grid;
+    grid-template-columns: .6fr 2fr 2fr;
+    padding: 20px 24px;
+    background-color: #171717;
+    border: 1px #20222E solid;
+    border-radius: 0 0 15px 15px;
+}
+
+
+.crypto__input::-webkit-outer-spin-button,
+.crypto__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.crypto__input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+.crypto__input, .fiat__input {
+    justify-self: end;
+    position: relative;
+    padding: 0 10px;
+    border: none;
+    text-align: end;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    width: 80%;
+    outline: none;
+    color:rgb(122, 122, 122);
+}
+
+
+.crypto__input__dark {
+    background-color: #2D3042;
+    color: #DFDFDF
+}
+
+
+.fiat__input {
+    background-color: rgb(250, 250, 250);
+    caret-color: transparent
+}
+
+
+.fiat__input__dark {
+    background-color: #171717;
+    color: #DFDFDF
+}
+
+
+.img {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+
+.crypto__name, .fiat__name {
+    position: relative;
+    top: 6px;
+    left: 5px;
+    font-size: .75rem;
+    font-weight: bold;
+    max-width: 145px;
+    overflow:hidden;
+    display:inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+

@@ -1,0 +1,121 @@
+.settings {
+    justify-self: end;
+    font-size: .7rem;
+    font-weight: bold;
+}
+
+.current__currency, .dark__theme__icon {
+    cursor: pointer;
+}
+
+
+.dark__theme__icon {
+    position: relative;
+    top: 8px;
+}
+
+
+.current__currency {
+    position: relative;
+    top: 6px;
+    right: 6px;
+}
+
+
+.popup__wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    z-index: 40;
+}
+
+
+.popup {
+    background-color: white;
+    color: black;
+    border-radius: 12px;
+    padding: 15px 30px;
+}
+
+
+.popup__dark {
+    background-color: #2d3042;
+    border-radius: 12px;
+    padding: 15px 30px;
+}
+
+
+.title {
+    position: relative;
+    right: 10px;
+    bottom: 6px;
+    font-size: 1.1rem;
+    color: gray
+}
+
+
+.closer {
+    position: relative;
+    left: 15px;
+    cursor: pointer;
+}
+
+
+.currencies__list {
+    margin: 8px -10px 5px -10px;
+    padding: 0;
+    list-style: none;
+}
+
+
+.currencies__list__item {
+    margin: 4px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: .8rem;
+    cursor: pointer;
+    transition: .4s;
+}
+
+
+.currencies__list__item:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+
+.currencies__list__item__dark:hover {
+    color: #17171A
+}
+
+
+.active {
+    border-radius: 8px;
+    background-color: rgb(230, 230, 230);
+    color: #17171A
+}
+
+
+.dark__theme {
+    position: relative;
+    top: 9px;
+}
+
+
+.light__theme {
+    position: relative;
+    
+}
+
+
+@media screen and (max-width: 993px) {
+    .settings {
+        display: none;
+    }
+}

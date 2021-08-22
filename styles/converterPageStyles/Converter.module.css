@@ -1,0 +1,163 @@
+
+.wrapper {
+    width: 60%;
+    margin: 0 auto;
+    background-color: rgb(238, 238, 238);
+    border-radius: 12px;
+}
+
+
+.wrapper__dark {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #171717;
+    border-radius: 12px;
+}
+
+
+.converter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1.2fr;
+    column-gap: 45px;
+    grid-template-areas: 'input selector-from selector-to'
+                            'output-value output-value convert-button';
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+
+}
+
+
+.input__amount {
+    grid-area: input;
+}
+
+
+.input {
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    font-size: .97rem;
+    width: 100%;
+    padding: 9px;
+    outline: none;
+}
+
+
+.input__dark {
+    background-color: #20222E;
+    color: #DFDFDF;
+}
+
+
+.label {
+    font-size: .8rem;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+
+.selector__from {
+    grid-area: selector-from
+}
+
+
+.selector__to {
+    grid-area: selector-to
+}
+
+
+.output__value {
+    grid-area: output-value;
+}
+
+
+.convert__button__wrapper {
+    position: relative;
+    top: 30px;
+    grid-area: convert-button;
+    justify-self: end;
+    cursor: pointer;
+}
+
+
+.convert_button:hover {
+    background-color: rgb(6, 90, 143);
+    
+}
+
+
+.output__value {
+    font-size: 1.5rem;
+    margin-top: 50px;
+    color:rgb(167, 167, 167)
+}
+
+
+.input__selector {
+    padding-bottom: 50px;
+}
+
+
+@media screen and (max-widtH: 1293px) {
+    .wrapper {
+        width: 80%;
+        margin: 0 auto;
+        background-color: rgb(238, 238, 238);
+        border-radius: 12px;
+    }
+    
+    
+    .wrapper__dark {
+        width: 80%;
+        margin: 0 auto;
+        background-color: #171717;
+        border-radius: 12px;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .converter {
+        display: grid;
+        column-gap: 15px;
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .wrapper, .wrapper__dark {
+        width: 90%
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .wrapper, .wrapper__dark {
+        width: 95%
+    }
+
+    .output__value {
+        font-size: .9rem;
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+    .converter {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px 0
+    }
+
+    .output__value {
+        font-size: .9rem;
+        position: relative;
+        bottom: 15px
+    }
+    
+}

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+.title__wrapper {
+    text-align: center;
+    padding: 50px 0
+}
+
+
+.title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family:  'Poppins', sans-serif;
+}
+
+
+.title__paragraph {
+    font-size: .9rem;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(145, 145, 145)
+}
+
+
+.title__number {
+    color: rgb(55, 178, 255)
+}
+
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: 1293px) {
+    @media (-webkit-max-device-pixel-ratio: 1.25) { 
+        .content {
+            width: 90%;
+            margin: 0 auto
+        }
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    @media (-webkit-max-device-pixel-ratio: 1.25) { 
+        .content {
+            width: 90%;
+            margin: 0 auto
+        }
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .title {
+        font-size: 1.2rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .title__paragraph {
+        font-size: .75rem
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+
+    .content {
+        width: 95%;
+        margin: 0 auto
+    }
+
+
+    .title__paragraph {
+        font-size: .6rem;
+        max-width: 270px;
+        margin: 10px auto
+    }
+}
+
+
+@media screen and (max-width: 530px) {
+    .title {
+        font-size: 1rem;
+    }
+}
+
+
+@media (-webkit-max-device-pixel-ratio: 1.00) { 
+    .content {
+        width: 65%;
+        margin: 0 auto
+    }
+}
+
