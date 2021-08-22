@@ -16,7 +16,7 @@ const ChartData = ({chartData, name, daysAmountData, switchDayAmount, activeButt
     useEffect(() => {
         const currentWidth = window.innerWidth
 
-            if (currentWidth <= 1200 && currentWidth > 992) {
+            if (currentWidth <= 1400 && currentWidth > 992) {
                 setCurrentChartHeight(350)
             }
 
