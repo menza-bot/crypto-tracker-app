@@ -11,10 +11,12 @@ const ChartData = ({chartData, name, daysAmountData, switchDayAmount, activeButt
 
     const [currentChartHeight, setCurrentChartHeight] = useState(450)
     const [currentChartWidth, setCurrentChartWidth] = useState('97%') 
+    const currentWidth = window.innerWidth
+
     
     
     useEffect(() => {
-        const currentWidth = window.innerWidth
+
 
             if (currentWidth <= 1400 && currentWidth > 992) {
                 setCurrentChartHeight(350)
@@ -24,6 +26,8 @@ const ChartData = ({chartData, name, daysAmountData, switchDayAmount, activeButt
                 setCurrentChartHeight(275) 
                 setCurrentChartWidth('100%')
             }
+
+
 
             /* if (currentWidth <= 760) {
                 setCurrentChartWidth('100%')
