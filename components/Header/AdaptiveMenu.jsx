@@ -27,7 +27,7 @@ const AdaptiveMenu = ({themeSwitcher, isActiveBurgerMenu, setActiveBurgerMenu, c
                 {
                     cats.map((item, index) => { 
                         if (item === 'cryptocurrencies') { 
-                            return  <div className = {styles.adaptive__category__wrapper}>
+                            return  <div className = {styles.adaptive__category__wrapper} onClick = {() => enableScroll()}>
                                         <Link href = {`/`}>
                                             <a 
                                                 key = {index}
@@ -36,7 +36,7 @@ const AdaptiveMenu = ({themeSwitcher, isActiveBurgerMenu, setActiveBurgerMenu, c
                                         </Link>
                                     </div>
                         } 
-                        return  <div className = {styles.adaptive__category__wrapper}>
+                        return  <div className = {styles.adaptive__category__wrapper} onClick = {() => {enableScroll()}}>
                                     <Link href = {`/${item}`}>
                                         <a 
                                             key = {index}
