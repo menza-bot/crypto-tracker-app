@@ -18,7 +18,6 @@ const ChartData = ({chartData, name, daysAmountData, switchDayAmount, activeButt
 
             if (currentWidth <= 1200 && currentWidth > 992) {
                 setCurrentChartHeight(350)
-                setCurrentChartWidth('100%')
             }
 
             if (currentWidth <= 992 && currentWidth > 760) {
