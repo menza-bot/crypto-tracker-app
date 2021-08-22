@@ -5,6 +5,7 @@ import Links from './Links'
 
 
 const Footer = ({themeValue}) => {
+
     return (
         <div className = {`${themeValue ? styles.footer__dark : styles.footer}`}>
             <div className = {styles.content}> 

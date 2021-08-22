@@ -25,11 +25,9 @@
 
 
 @media screen and (max-width: 1293px) {
-    @media (-webkit-max-device-pixel-ratio: 1.25) { 
-        .content {
-            width: 90%;
-            margin: 0 auto
-        }
+    .content {
+        width: 90%;
+        margin: 0 auto
     }
 }
 

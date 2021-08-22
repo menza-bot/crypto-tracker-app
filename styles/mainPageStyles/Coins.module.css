@@ -414,7 +414,7 @@
 }
 
 
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 340px) {
     .coins__container__tiles {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

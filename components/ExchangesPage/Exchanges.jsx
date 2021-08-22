@@ -39,17 +39,17 @@ const Exchanges = ({themeValue}) => {
                 exchanges.length ? exchanges.map((item, index) => 
                 <div key = {index} className={styles.exchanges__container}>
                     <div className={`${themeValue ? styles.row__dark : styles.row}`}>
-                            <p className = {styles.index}>{item.trust_score_rank}</p>
+                            <p className = {styles.index}>{item.trust_score_rank ? item.trust_score_rank : '-'}</p>
                             <p className = {styles.name}>
                                 <span className={styles.img__wrapper}><img src={item.image} alt={item.name} className={styles.img} /></span>
                                 <span className={styles.title}>{item.name}</span>
                             </p>
-                            <p className={styles.trust__score}>{item.trust_score ? item.trust__score : '-'}</p>
+                            <p className={styles.trust__score}>{item.trust_score ? item.trust_score : '-'}</p>
                             <p className={styles.volume}>{item.trade_volume_24h_btc.toFixed(2)}</p>
                             {item.year_established ?  <p className={styles.year__established}>
                                                             {item.year_established}
                                                         </p> : <p className={styles.year__established}>-</p>}
-                            {item.country ? <p className={styles.country}>{item.country}</p> : <p className = {styles.country}>-</p>}
+                            {item.country ? <p className={styles.country}>{item.country ? item.country : '-'}</p> : <p className = {styles.country}>-</p>}
                     </div>
                 </div>
                 ) : null

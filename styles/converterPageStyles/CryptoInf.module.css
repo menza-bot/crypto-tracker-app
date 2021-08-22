@@ -12,9 +12,18 @@
 
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1293px) {
     .wrapper {
         width: 90%;
+        margin: 0 auto;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 95%;
         margin: 0 auto;
     }
 }

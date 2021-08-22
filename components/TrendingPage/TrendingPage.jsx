@@ -22,7 +22,7 @@ const TrendingPage = ({themeValue}) => {
 
 
     return (
-        <div>
+        <div className = {styles.wrapper}>
             <TrendingTitle />
             <TrendingContent themeValue = {themeValue}/>
         </div>

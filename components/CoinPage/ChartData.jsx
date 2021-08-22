@@ -17,14 +17,16 @@ const ChartData = ({chartData, name, daysAmountData, switchDayAmount, activeButt
         const currentWidth = window.innerWidth
 
             if (currentWidth <= 1200 && currentWidth > 992) {
-                setCurrentChartHeight(350) }
-
-            if (currentWidth <= 992 && currentWidth > 760) {
-                setCurrentChartHeight(300) 
+                setCurrentChartHeight(350)
                 setCurrentChartWidth('100%')
             }
 
-            if (currentWidth <= 760) {
+            if (currentWidth <= 992 && currentWidth > 760) {
+                setCurrentChartHeight(275) 
+                setCurrentChartWidth('100%')
+            }
+
+            /* if (currentWidth <= 760) {
                 setCurrentChartWidth('100%')
             }
 
@@ -36,7 +38,7 @@ const ChartData = ({chartData, name, daysAmountData, switchDayAmount, activeButt
             if (currentWidth <= 350 ) {
                 setCurrentChartHeight(195)
                 setCurrentChartWidth('100%')
-            }
+            } */
     }, [])
     
 

@@ -168,7 +168,7 @@
 
 
 @media screen and (max-width: 994px) {
-    .header {
+    .header, .header__dark {
         display: none;
     }
 
@@ -194,6 +194,12 @@
 
 
 @media screen and (max-width: 768px) {
+
+    .wrapper {
+        width: 95%;
+        margin: 0 auto
+    }
+
     .row, .row__dark {
         width: 700px;
         height: 85px;

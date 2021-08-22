@@ -18,19 +18,23 @@ export const FiltersBar = ({ pageSize, dispatch, currentCurrency, listOfCurrenci
                 <span className = {`${styles.item} ${styles.show__rows} ${themeValue && styles.item__darktheme}`} onClick = {() => setActivePageSizePopup(!isActivePageSizePopup)}>Show rows: {pageSize}</span>
                 {
                     isActivePageSizePopup ? 
-                        <div className = {`${themeValue ? styles.popup__dark : styles.popup} ${styles.pagesize__popup}`}> 
+                        <div className = {styles.popup__wrapper}>
+                            <div className = {`${themeValue ? styles.popup__dark : styles.popup} ${styles.pagesize__popup}`}> 
                             {
-                                rowAmounts.map(item => <div className = {styles.popup__item} onClick = {() => {dispatch(pageSizeSwitch(item)), setActivePageSizePopup(!isActivePageSizePopup)}}>{item}</div>)
+                                rowAmounts.map(item => <span className = {styles.popup__item} onClick = {() => {dispatch(pageSizeSwitch(item)), setActivePageSizePopup(!isActivePageSizePopup)}}>{item}</span>)
                             }
+                        </div>
                         </div> : null
                 }   
                 <span className = {`${styles.item} ${styles.currency} ${themeValue && styles.item__darktheme}`} onClick = {() => setActiveCurrencyPopup(!isActiveCurrencyPopup)}>Currency: {currentCurrency}</span>
                 {
-                    isActiveCurrencyPopup ? 
-                        <div className = {`${themeValue ? styles.popup__dark : styles.popup} ${styles.currency__popup}`}>
-                            {
-                                Object.values(listOfCurrencies).map(item => <div className = {styles.popup__item} onClick = {() => {dispatch(changeCurrency(item)), dispatch(changeCurrencyForDetailsPage(item)), setActiveCurrencyPopup(!isActiveCurrencyPopup)}}>{item}</div>)
-                            }
+                    isActiveCurrencyPopup ?
+                        <div className = {styles.popup__wrapper}>
+                            <div className = {`${themeValue ? styles.popup__dark : styles.popup} ${styles.currency__popup}`}>
+                                {
+                                    Object.values(listOfCurrencies).map(item => <span className = {styles.popup__item} onClick = {() => {dispatch(changeCurrency(item)), dispatch(changeCurrencyForDetailsPage(item)), setActiveCurrencyPopup(!isActiveCurrencyPopup)}}>{item}</span>)
+                                }
+                            </div>
                         </div> : null
                 }
             </div>

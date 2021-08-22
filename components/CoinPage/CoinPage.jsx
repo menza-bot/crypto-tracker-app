@@ -39,31 +39,34 @@ const CoinPage = ({themeValue}) => {
 
     return (
         <div className = {styles.wrapper}>   
-                <div>
-                    <div className = {styles.wrapper__coin}>
-                        <CoinData 
-                            state = {state} 
-                            themeValue = {themeValue}
-                        />                
-                    </div>
-                    <div className = {styles.wrapper__chart__data}>
-                        <MemoChartData 
-                            chartData = {state.chartData}
-                            name = {state.coinMainInf.name}
-                            daysAmountData = {state.daysAmountData}
-                            switchDayAmount = {switchDayAmount}
-                            activeButton = {activeButton}
-                            themeValue = {themeValue}
-                        />
-                        <MemoSwapAndStats 
-                            currentPriceSelected = {state.marketData.currentPriceSelected}
-                            currentCurrency = {state.currentCurrency}
-                            img = {state.img}
-                            name = {state.coinMainInf.name}
-                            themeValue = {themeValue}
-                        />
-                    </div>
+        {
+            state.chartData && state.coinMainInf.name ? 
+            <div>
+                <div className = {styles.wrapper__coin}>
+                    <CoinData 
+                        state = {state} 
+                        themeValue = {themeValue}
+                    />                
                 </div>
+                <div className = {styles.wrapper__chart__data}>
+                    <MemoChartData 
+                        chartData = {state.chartData}
+                        name = {state.coinMainInf.name}
+                        daysAmountData = {state.daysAmountData}
+                        switchDayAmount = {switchDayAmount}
+                        activeButton = {activeButton}
+                        themeValue = {themeValue}
+                    />
+                    <MemoSwapAndStats 
+                        currentPriceSelected = {state.marketData.currentPriceSelected}
+                        currentCurrency = {state.currentCurrency}
+                        img = {state.img}
+                        name = {state.coinMainInf.name}
+                        themeValue = {themeValue}
+                    />
+                </div>
+            </div> : null
+        }
         </div>
     )
 }

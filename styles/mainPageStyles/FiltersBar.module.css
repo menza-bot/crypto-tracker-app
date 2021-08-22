@@ -46,8 +46,23 @@
 }
 
 
+.popup__wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    z-index: 40;
+}
+
+
 .popup {
-    position: absolute;
+    padding: 15px;
     background-color: rgb(240, 240, 240);
     border-radius: 7px;
     list-style: none;
@@ -56,7 +71,7 @@
 
 
 .popup__dark {
-    position: absolute;
+    padding: 15px;
     background-color: #17171A;
     border-radius: 7px;
     list-style: none;
@@ -65,15 +80,11 @@
 
 
 .pagesize__popup {
-    margin-top: 10px;
-    margin-left: 85px;
     cursor: pointer;
 }
 
 
 .currency__popup {
-    margin-top: 10px;
-    margin-left: 193px;
     cursor: pointer;
 }
 
