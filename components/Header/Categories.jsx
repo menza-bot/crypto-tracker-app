@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { IconContext } from 'react-icons/lib'
 
 
-const Categories = ({cats, setActiveBurgerMenu}) => {
+const Categories = ({cats, setActiveBurgerMenu, disableScroll}) => {
 
 
     return (
@@ -23,7 +23,7 @@ const Categories = ({cats, setActiveBurgerMenu}) => {
                                 </Link>} )
                 }
             </div>
-            <div className = {styles.adaptive__menu__icon__wrapper} onClick = {() => setActiveBurgerMenu(true)}>
+            <div className = {styles.adaptive__menu__icon__wrapper} onClick = {() => {disableScroll(), setActiveBurgerMenu(true)}}>
                 <IconContext.Provider value = {{size: '25px', className: `${styles.adaptive__menu__icon}`}}>
                     <GiHamburgerMenu />
                 </IconContext.Provider>

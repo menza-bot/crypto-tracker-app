@@ -3,6 +3,7 @@ import Footer from "./Footer/Footer"
 import GlobalData from "./GlobalData/GlobalData"
 import Header from "./Header/Header"
 
+
 const Layout = ({children, themeValue, themeSwitcher}) => {
     return (
         <div>

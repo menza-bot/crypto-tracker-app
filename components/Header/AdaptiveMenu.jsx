@@ -8,7 +8,7 @@ import CurrencyPopup from '../GlobalData/CurrencyPopup'
 
 
 
-const AdaptiveMenu = ({themeSwitcher, isActiveBurgerMenu, setActiveBurgerMenu, cats, currentCurrency, listOfCurrencies, themeValue, dispatch}) => {
+const AdaptiveMenu = ({themeSwitcher, isActiveBurgerMenu, setActiveBurgerMenu, cats, currentCurrency, listOfCurrencies, themeValue, enableScroll, dispatch}) => {
 
 
     return (
@@ -17,7 +17,7 @@ const AdaptiveMenu = ({themeSwitcher, isActiveBurgerMenu, setActiveBurgerMenu, c
                 <span className = {styles.title}>
                     <Title />
                 </span>
-                <i className = {styles.closer__icon} onClick = {() => {setActiveBurgerMenu(false)}}>
+                <i className = {styles.closer__icon} onClick = {() => {setActiveBurgerMenu(false), enableScroll()}}>
                     <IconContext.Provider value = {{className: 'closer', size: '25px'}}>
                         <GrClose />
                     </IconContext.Provider>

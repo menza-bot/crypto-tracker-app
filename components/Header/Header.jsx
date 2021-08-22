@@ -18,13 +18,25 @@ const Header = ({themeValue, themeSwitcher}) => {
     const dispatch = useDispatch()
 
 
+    const disableScroll = () => {
+        document.body.style.overflow = 'hidden'
+    }
+
+
+    const enableScroll = () => {
+        document.body.style.overflow = ''
+    }
+
+
     return (
             <div className = {`${themeValue ? styles.wrapper__dark : styles.wrapper}`}>
                 <div className = {styles.content}> 
                     <Title />
                     <Categories
                         cats = {cats}
-                        setActiveBurgerMenu = {setActiveBurgerMenu}/> 
+                        setActiveBurgerMenu = {setActiveBurgerMenu}
+                        disableScroll = {disableScroll}
+                        /> 
                 </div>
                 <AdaptiveMenu 
                     themeSwitcher = {themeSwitcher}
@@ -34,6 +46,7 @@ const Header = ({themeValue, themeSwitcher}) => {
                     generalStats = {generalStats}
                     currentCurrency = {currentCurrency}
                     listOfCurrencies = {listOfCurrencies}
+                    enableScroll = {enableScroll}
                     dispatch = {dispatch}
                     cats = {cats}/>
             </div>
