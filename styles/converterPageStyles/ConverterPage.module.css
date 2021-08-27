@@ -30,10 +30,6 @@
 @media screen and (max-width: 768px) {
 
 
-    .title {
-        font-size: .9rem;
-    }
-
     .title__paragraph {
         font-size: .6rem;
         max-width: 270px;
@@ -44,6 +40,6 @@
 
 @media screen and (max-width: 530px) {
     .title {
-        font-size: .8rem;
+        font-size: 1rem;
     }
 }
