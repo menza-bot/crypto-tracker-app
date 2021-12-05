@@ -7,9 +7,9 @@ import TrendingPage from "../components/TrendingPage/TrendingPage"
 
 const Trending = ({themeValue}) => {
     return (
-        <div>
+        <>
             <TrendingPage themeValue = {themeValue}/>
-        </div>
+        </>
     )
 }
 

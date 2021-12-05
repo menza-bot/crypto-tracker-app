@@ -8,9 +8,9 @@ const Exchanges = ({themeValue}) => {
 
 
     return (
-            <div>
+            <>
                 <ExchangesPage themeValue = {themeValue}/>
-            </div>
+            </>
     )
 }
 

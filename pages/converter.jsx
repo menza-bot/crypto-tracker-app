@@ -4,9 +4,9 @@ import Layout from "../components/Layout"
 
 const Converter = ({themeValue}) => {
     return (
-            <div>
+            <>
                 <ConverterPage themeValue = {themeValue}/>
-            </div>
+            </>
     )
 }
 
