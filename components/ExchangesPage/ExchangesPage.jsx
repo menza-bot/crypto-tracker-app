@@ -23,10 +23,10 @@ const ExchangesPage = ({themeValue}) => {
 
 
     return (
-        <div>
+        <>
             <ExchangesTitle />
             <Exchanges themeValue = {themeValue} />
-        </div>
+        </>
     )
 }
 

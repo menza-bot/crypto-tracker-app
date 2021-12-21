@@ -6,13 +6,17 @@ import dataAPI from "../fetchAPI/fetchData";
 export const fetchCurrentPrice = createAsyncThunk(
     'converterSlice/fetchCurrentPrice',
     async ({id, vsCurrency}) => {
-        const response = await dataAPI.getCurrentPrice(id, vsCurrency)
-        for (let name in response.data) {
-            let value = response.data[name]
-            for (let name in value) {
-                let currentRate = value[name]
-                return currentRate
+        try {
+            const response = await dataAPI.getCurrentPrice(id, vsCurrency)
+            for (let name in response.data) {
+                let value = response.data[name]
+                for (let name in value) {
+                    let currentRate = value[name]
+                    return currentRate
+                }
             }
+        } catch (error) {
+            console.log(error)
         }
     }
 )
@@ -71,13 +75,14 @@ const converterSlice = createSlice({
             state.inputValueTo = payload
         },
         setInputNumber(state, {payload}) {
-            state.inputNumber = payload
+            state.inputNumber = payload                                                                                                                                                                                              
         },
         setOutputNumber(state) {
             if (state.inputNumber && state.currentPrice) {
                 state.outputNumber = state.inputNumber * state.currentPrice
             }
             else {
+                state.outputNumber = null
                 console.log('Please input something...')
             }
         }

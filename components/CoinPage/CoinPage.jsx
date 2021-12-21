@@ -16,6 +16,7 @@ const CoinPage = ({themeValue}) => {
 
     const dispatch = useDispatch()
     const router = useRouter()
+    console.log(router.query.id)
     const state = useSelector(state => state.coinDetailsSlice)
     const [activeButton, setActiveButton] = useState('1D')
 
@@ -27,8 +28,11 @@ const CoinPage = ({themeValue}) => {
 
 
     useEffect(() => {
-        dispatch(fetchCoinDetails(router.query.id))
-        dispatch(fetchChartData({id: router.query.id, vs_currency: state.currentCurrency.toLowerCase(), days_amount: state.currentDaysAmount}))
+        console.log(router.query.id && router.query.id !== undefined)
+        if (router.query.id) {
+            dispatch(fetchCoinDetails(router.query.id))
+            dispatch(fetchChartData({id: router.query.id, vs_currency: state.currentCurrency.toLowerCase(), days_amount: state.currentDaysAmount}))
+        }
     }, [router.query.id, state.currentCurrency])
 
 
@@ -40,7 +44,7 @@ const CoinPage = ({themeValue}) => {
     return (
         <div className = {styles.wrapper}>   
         {
-            state.chartData && state.coinMainInf.name ? 
+            state.chartData || state.coinMainInf.name ? 
             <div>
                 <div className = {styles.wrapper__coin}>
                     <CoinData 

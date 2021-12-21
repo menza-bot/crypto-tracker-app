@@ -6,7 +6,7 @@ import { IconContext } from 'react-icons/lib'
 
 const SelectedIconCurrency = ({currentCurrency}) => {
     return (
-        <div>
+        <>
             {
                 currentCurrency === 'USD' ? 
                     <IconContext.Provider value = {{color: 'gray', size: '27px'}}>
@@ -25,7 +25,7 @@ const SelectedIconCurrency = ({currentCurrency}) => {
                         <BiRuble />
                     </IconContext.Provider> : null
             }
-        </div>
+        </>
     )
 }
 

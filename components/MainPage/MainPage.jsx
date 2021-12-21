@@ -25,6 +25,7 @@ const MainPage = ({themeValue}) => {
                         <p className = {styles.title__paragraph}>The global crypto market cap is <strong className = {marketCap}>{Math.floor(marketCap).toLocaleString()}</strong>.</p>
                     </div> : null
                 }
+                text
             </div>
         )
     }
@@ -71,6 +72,9 @@ const MainPage = ({themeValue}) => {
                         portionSize = {state.portionSize}
                         dispatch = {dispatch}
                     /> 
+                    <p>
+                        test text
+                    </p>
                 </div>
         </div>
     )

@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
@@ -19,9 +21,19 @@
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-select": "^4.3.1",
+    "react-test-renderer": "^17.0.2",
     "recharts": "^2.0.10",
     "redux": "^4.1.0",
     "styled-components": "^5.3.0",
     "use-dark-mode": "^2.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^8.11.1",
+    "@testing-library/jest-dom": "^5.16.0",
+    "@testing-library/react": "^12.1.2",
+    "babel-jest": "^27.4.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.3",
+    "msw": "^0.36.3"
   }
 }
