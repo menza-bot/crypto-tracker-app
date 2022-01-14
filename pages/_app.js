@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 import store from '../store/store'
 import '../styles/globals.css'
 import useDarkMode from 'use-dark-mode'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 
@@ -27,9 +27,11 @@ function MyApp({ Component, pageProps }) {
             <Provider store = {store}>
               {
                 isMounted && 
+                <React.StrictMode>
                   <Layout themeSwitcher = {darkMode.toggle} themeValue = {darkMode.value}>
                     <Component {...pageProps} themeValue = {darkMode.value} />
                   </Layout>
+                </React.StrictMode>
               }
             </Provider>
           
