@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.wrapper {
+    position: relative;
+}
+
+.searchbar {
+    position: relative;
+    top: 18px;
+    display: flex;
+    background-color: #F0F0F0;
+    color: rgb(195, 195, 195);
+    border-radius: 8px;
+    padding: 8px;
+    -webkit-box-align: center;
+    cursor: pointer;
+    margin-left: 8px;
+    width: 120px;
+    height: 35px;
+    justify-self: end;
+}
+
+.title {
+    font-size: .75rem;
+    margin-left: 8px;
+}
+
+.trending__header, .searched__header {
+    margin-bottom: 8px;
+    width: 95%;
+    margin: 8px auto;
+    font-size: .75rem;
+    color: #3d3d3d;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.modal {
+    position: absolute;
+    z-index: 3333;
+    left: 50%;
+    transform: translate(-50%);
+    top: 53px;
+    width: 400px;
+    min-height: 140px;
+    border-radius: 8px;
+    background-color: #FAFAFA;
+    transition: 1s;
+    box-shadow: 2px 5px 16px rgb(212, 212, 212);
+    padding: 8px 0;
+}
+
+.modal__dark {
+    position: absolute;
+    z-index: 3333;
+    left: 50%;
+    transform: translate(-50%);
+    top: 53px;
+    width: 400px;
+    min-height: 140px;
+    border-radius: 8px;
+    background-color: #17171A;
+    transition: 1s;
+    padding: 8px 0;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    width: 88%;
+    margin: 5px auto
+}
+
+.modalHidden {
+    display: none;
+}
+
+.input__wrapper {
+    width: 90%;
+}
+
+.input {
+    position: relative;
+    bottom: 3px;
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: #FAFAFA;
+    color: rgb(23, 25, 36);
+}
+
+.input__dark {
+    position: relative;
+    bottom: 3px;
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: #17171A;
+    color: rgb(23, 25, 36);
+}
+
+.input::placeholder {
+    color: #919191;
+    font-size: .9em;
+}
+
+.input__dark::placeholder {
+    color: #DFDFDF;
+    font-size: .9rem
+}
+
+.trending__coins__wrapper, .searched__content__wrapper {
+    width: 92%;
+    margin: 5px auto;
+}
+
+.trending__coin__wrapper, .searched__coin__wrapper {
+    width: 100%;
+    margin: 0 auto;
+    /* display: flex;
+    justify-content: space-between;
+    font-size: .8rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 8px 0;
+    cursor: pointer; */
+}
+
+
+
+.searched__content__wrapper {
+    overflow-y: auto;
+    height: 230px;
+}
+
+.searched__content__wrapper::-webkit-scrollbar {
+    width: 2px
+}
+
+.searched__content__wrapper::-webkit-scrollbar-thumb {
+    background-color: rgb(204, 204, 204);
+}
+
+.searched__content__wrapper::-webkit-scrollbar-track {
+    background-color: rgb(235, 235, 235);
+} 
+
+.searched__coin__wrapper:hover {
+    background-color: rgb(240, 238, 238);
+    border-radius: 7px;
+}
+
+.trending__coin, .searched__coin {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: .8rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.trending__coin__wrapper:hover {
+    background-color: rgb(240, 240, 240);
+    border-radius: 7px;
+}
+
+.img {
+    border-radius: 50%;
+    border: 1px solid rgb(235, 235, 235)
+}
+
+.name__text {
+    position: relative;
+    top: 2px;
+    left: 9px;
+}
+
+.rank {
+    color:rgb(175, 175, 175);
+    font-weight: 500;
+}
+
+.trending__coins {
+    display: block;
+}
+
+.fire__icon {
+    position: relative;
+    top: 2px;
+}
+
+.modal__close__icon {
+    cursor: pointer;
+}
+
+.name {
+    display: flex;
+}
+
+.no__results {
+    position: relative;
+    top: 25px;
+}
+
+.no__results__icon {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(240, 238, 238);
+    border-radius: 50%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.no__results__title {
+    margin: 12px auto;
+    font-size: .85rem;
+    max-width: 300px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.no__results__text {
+    margin: 5px auto;
+    font-size: .75rem;
+    text-align: center;
+
+}
+
+@media screen and (max-width: 992px) {
+    .searchbar {
+        display: none;
+    }
+
+    .modal, .modal__dark {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0
+    }
+
+    .trending__coin, .searched__coin {
+        font-size: .9rem;
+        font-weight: bold
+    }
+
+    .trending__header, .searched__header {
+        font-size: .9rem;
+        padding: 10px 0
+    }
+
+    .searched__content__wrapper {
+        overflow-y: auto;
+        height: 92vh
+    }
+}
+
