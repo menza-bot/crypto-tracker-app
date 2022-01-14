@@ -13,18 +13,28 @@
 
 
 .content {
-    display: grid;
-    grid-template-columns: 5fr 1fr;
+    display: flex;
     width: 80%;
-    margin: 0 auto
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-shrink: 0;
+    flex-grow: 1;
 }
 
 
-@media screen and (max-width: 1293px) {
+@media screen and (max-width: 1297px) {
         .content {
             width: 90%;
             margin: 0 auto
         }
+}
+
+
+@media screen and (max-width: 992px) {
+    .content {
+        display: grid;
+        grid-template-columns: 25fr 1fr;
+    }
 }
 
 
