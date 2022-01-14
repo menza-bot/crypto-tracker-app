@@ -1,26 +1,28 @@
 .cats__wrapper { 
-    justify-self: end;
+    justify-self: start;
 }
 
 
 .cats {
     display: flex;
+    position: relative;
     flex-direction: row;
-    justify-self: end;
+    justify-self: start;
+    left: 0;
 }
 
 
 .cats_item {
     position: relative;
-    top: 24px;
-    margin-left: 45px;
+    top: 25px;
+    margin-left: 40px;
     font-size: .8rem;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
 }
 
 
-.adaptive__menu__icon__wrapper {
+.adaptive__menu__icon__wrapper, .adatpive__menu__search__wrapper {
     display: none;
 }
 
@@ -38,9 +40,17 @@
     }
 
     .adaptive__menu__icon__wrapper {
+        display: flex;
+        flex: 2;
         position: relative;
         top: 22px;
-        display: grid;
+        justify-content: space-between;
         justify-self: end;
     }
+
+    .adaptive__menu__icon__loop {
+        position: relative;
+        right: 8px;
+    }
+
 }
