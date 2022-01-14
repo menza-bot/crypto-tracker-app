@@ -4,6 +4,7 @@ import { fetchCoins } from '../../store/mainPageSlice'
 import { AiOutlineStar } from 'react-icons/ai'
 import { IoMdBookmark } from 'react-icons/io'
 import Link from 'next/link'
+import { SkeletonElement } from '../../skeletonLoading/SkeletonElement'
 
 
 const Coins = ({ coins, currentCurrency, currentCurrencySymbol, currentPage, pageSize, showingStats, generalStats, rowStyle, tileStyle, themeValue, dispatch }) => {
@@ -48,7 +49,7 @@ const Coins = ({ coins, currentCurrency, currentCurrencySymbol, currentPage, pag
                 </ul>
             </div>
             <div className = {`${rowStyle ? styles.coins__container__rows : styles.coins__container__tiles}`}>
-                { 
+                {/* { 
                     coins.length && rowStyle ? coins.map((item, index) => 
                                 <div className={`${themeValue ? styles.row__wrapper__dark : styles.row__wrapper}`} key = {index}>
                                     <div className={themeValue ? styles.row__dark : styles.row}>
@@ -69,7 +70,10 @@ const Coins = ({ coins, currentCurrency, currentCurrencySymbol, currentPage, pag
                                         <p className={`${styles.market__cap} ${styles.market__cap__adaptive}`}> {currentCurrencySymbol} {item.market_cap ? item.market_cap.toLocaleString() : '-'}</p>
                                     </div>
                                 </div>
-                    ) : null
+                    ) : ([1, 2, 3, 4, 5, 6, 7].map((item, id) => <SkeletonElement type = 'content__plate' key={id}/>))
+                } */}
+                {
+                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((item, id) => <SkeletonElement type = 'content__plate' key={id}/>)
                 }
                 {
                     coins.length && tileStyle ? coins.map((item, index) => 

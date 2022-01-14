@@ -15,7 +15,7 @@ const Title = () => {
                                     </i>
                                 </a> 
                                 <a className = {styles.text}>
-                                    CryptoCurrencyTracker
+                                    CurrencyTracker
                                 </a>
                             </div>
                         </Link>

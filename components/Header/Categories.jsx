@@ -3,9 +3,10 @@ import styles from '../../styles/headerStyles/Categories.module.css'
 import Link from 'next/link'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IconContext } from 'react-icons/lib'
+import { FiSearch } from 'react-icons/fi'
 
 
-const Categories = ({cats, setActiveBurgerMenu, disableScroll}) => {
+const Categories = ({cats, setActiveBurgerMenu, disableScroll, activateSearchModal}) => {
 
 
     return (
@@ -23,10 +24,17 @@ const Categories = ({cats, setActiveBurgerMenu, disableScroll}) => {
                                 </Link>} )
                 }
             </div>
-            <div className = {styles.adaptive__menu__icon__wrapper} onClick = {() => {disableScroll(), setActiveBurgerMenu(true)}}>
-                <IconContext.Provider value = {{size: '25px', className: `${styles.adaptive__menu__icon}`}}>
-                    <GiHamburgerMenu />
-                </IconContext.Provider>
+            <div className = {styles.adaptive__menu__icon__wrapper}>
+                <div onClick = {() => {disableScroll(), activateSearchModal()}}>
+                    <IconContext.Provider value = {{size: '25px', className: `${styles.adaptive__menu__icon__loop}`}}>
+                        <FiSearch />
+                    </IconContext.Provider>
+                </div>
+                <div onClick = {() => {disableScroll(), setActiveBurgerMenu(true)}}>
+                    <IconContext.Provider value = {{size: '25px', className: `${styles.adaptive__menu__icon}`}}>
+                        <GiHamburgerMenu />
+                    </IconContext.Provider>
+                </div>
             </div>
         </div>
     )

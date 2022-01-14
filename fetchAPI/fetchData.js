@@ -6,8 +6,6 @@ const instance = axios.create({
 });
 
 const dataAPI = {
-
-
     getCoins(currentPage, pageSize, currentCurrency) {
         return instance.get(`coins/markets?vs_currency=${currentCurrency}&order=market_cap_desc&per_page=${pageSize}&page=${currentPage}&sparkline=false`)
     },
@@ -30,8 +28,11 @@ const dataAPI = {
         return instance.get(`coins/${id}?localization=false&tickers=false&market_data=true&community_data=true&developer_data=false&sparkline=false`)
     },
     getChartData(id, vs_currency, days_amount) {
-        return instance.get(`/coins/${id}/market_chart?vs_currency=${vs_currency}&days=${days_amount}`)
-    } 
+        return instance.get(`coins/${id}/market_chart?vs_currency=${vs_currency}&days=${days_amount}`)
+    },
+    getSearchBarData(inputData) {
+        return instance.get(`search/?query=${inputData}`)
+    }
     
 }
 

@@ -11,12 +11,12 @@ const TrendingCoins = ({themeValue}) => {
 
 
     const trendingCoins = useSelector(state => state.trendingSlice.trendingCoins)
-    const dispatch = useDispatch()
+    /* const dispatch = useDispatch() */
 
 
-    useEffect(() => {
+    /* useEffect(() => {
         dispatch(fetchTrendingCoins())
-    }, [])
+    }, []) */
 
 
     return (
