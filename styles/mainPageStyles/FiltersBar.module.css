@@ -135,7 +135,9 @@
 
 
 @media only screen and (max-width: 1200px) {
-    
+    .bar {
+        padding: 0px
+    }
 }
 
 
