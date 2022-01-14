@@ -25,6 +25,15 @@ export const fetchGeneralStats = createAsyncThunk(
 )
 
 
+export const fetchSearchBarData = createAsyncThunk(
+    'mainPageSlice/fetchSearchBarData',
+    async (inputData) => {
+        const response = await dataAPI.getSearchBarData(inputData)
+        return response.data
+    }
+)
+
+
 const initialCurrency = {
     usd: null,
     eur: null,
@@ -58,7 +67,9 @@ const mainPageSlice = createSlice({
         pageSize: 90,
         rowAmounts: [90, 60, 30],
         portionSize: 5,
-        currentPage: 1
+        currentPage: 1,
+        searchedCoins: [],
+        searchedExchanges: []
     },
     reducers: {
         pageSwitchReducer: (state, {payload}) => {
@@ -103,6 +114,10 @@ const mainPageSlice = createSlice({
         },
         showStats: (state) => {
             state.showingStats = !state.showingStats
+        },
+        clearSearchBarData: (state) => {
+            state.searchedCoins = []
+            state.searchedExchanges = []
         }
     },
     extraReducers: {
@@ -118,13 +133,17 @@ const mainPageSlice = createSlice({
             state.coinsQuantity = payload.active_cryptocurrencies
             state.totalVolume = payload.total_volume
             state.totalMarketCap = payload.total_market_cap
+        },
+        [fetchSearchBarData.fulfilled]: (state, {payload}) => {
+            state.searchedCoins = payload.coins
+            state.searchedExchanges = payload.exchanges
         }
     }
 })
 
 
 
-export const { pageSwitchReducer, pageSizeSwitch, changeCurrency, setRowStyle, setTileStyle, showStats } = mainPageSlice.actions
+export const { pageSwitchReducer, pageSizeSwitch, changeCurrency, setRowStyle, setTileStyle, showStats, clearSearchBarData } = mainPageSlice.actions
 
 
 
