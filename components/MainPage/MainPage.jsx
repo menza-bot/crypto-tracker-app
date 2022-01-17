@@ -4,7 +4,7 @@ import styles from '../../styles/mainPageStyles/MainPage.module.css'
 import { MemoFiltersBar } from './FiltersBar'
 import { MemoPagination } from './Pagination'
 import { useDispatch, useSelector } from 'react-redux'
-import { SkeletonTitle } from '../../skeletonLoading/SkeletonTitle'
+import { SkeletonTitle } from '../../skeletonLoading/skeletons/SkeletonTitle'
 
 
 const MainPage = ({themeValue}) => {
@@ -18,15 +18,13 @@ const MainPage = ({themeValue}) => {
     const MainPageTitle = ({marketCap}) => {
         return (
             <div>
-                {/* {
+                {
                     marketCap ? 
                     <div className = {styles.title__wrapper}>
                         <div className = {styles.title}>Today's Cryptocurrency Prices by Crypto App.</div>
-                        <p className = {styles.title__paragraph}>The global crypto market cap is <strong className = {marketCap}>{Math.floor(marketCap).toLocaleString()}</strong>.</p>
-                    </div> : <SkeletonTitle />
-                } */}
-
-                <SkeletonTitle />
+                        <p className = {styles.title__paragraph}>The global crypto market cap is <strong className = {styles.main__marketcap__number}>{state.currentCurrencySymbol} {Math.floor(marketCap).toLocaleString()}</strong>.</p>
+                    </div> : <SkeletonTitle themeValue={themeValue}/>
+                }
             </div>
         )
     }

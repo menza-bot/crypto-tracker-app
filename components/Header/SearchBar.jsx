@@ -32,7 +32,7 @@ export const SearchBar = ({ trendingCoins, isActiveModal, activateSearchModal, d
     return (
         <>
             <div className={styles.wrapper}>
-                <div className={styles.searchbar} onClick={() => activateSearchModal()}>
+                <div className={themeValue ? styles.searchbar__dark : styles.searchbar} onClick={() => activateSearchModal()}>
                     <IconContext.Provider value={{ color: '#A6B0C3', size: '15px', marginTop: '2px' }}>
                         <FiSearch />
                     </IconContext.Provider>
@@ -69,7 +69,7 @@ export const SearchBar = ({ trendingCoins, isActiveModal, activateSearchModal, d
                         <div className={styles.trending__header}>
                             {
                                 !inputValue ? <>
-                                    Trending Coins <span className={styles.fire__icon}>
+                                    <span className={themeValue ? styles.trending__title__dark : styles.trending__title}>Trending Coins</span> <span className={styles.fire__icon}>
                                         <IconContext.Provider value={{ color: 'tomato', size: '15px' }}>
                                             <ImFire />
                                         </IconContext.Provider>

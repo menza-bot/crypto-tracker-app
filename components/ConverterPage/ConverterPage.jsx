@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from '../../styles/converterPageStyles/ConverterPage.module.css'
 import Converter from './Converter'
-import CryptoInf from './CryptoInf'
 import { useSelector, useDispatch } from 'react-redux'
 
 
@@ -30,7 +29,6 @@ const ConverterPage = ({themeValue}) => {
         <div className = {styles.wrapper}>
             <ConverterTitle />
             <Converter themeValue = {themeValue} state = {state} dispatch = {dispatch}/> 
-            <CryptoInf cryptoInf = {cryptoInf}/>
         </div>
     )
 }

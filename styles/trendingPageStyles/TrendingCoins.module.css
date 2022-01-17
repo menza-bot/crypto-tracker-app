@@ -5,7 +5,7 @@
     position: sticky;
     top: 130px;
     border: solid 1px rgb(236, 236, 236);
-    border-radius: 7px;
+    border-radius: 25px;
     padding-bottom: 30px;
     margin-bottom: 70px;
 }
@@ -15,7 +15,7 @@
     position: sticky;
     top: 130px;
     border: solid 1px #17171A;
-    border-radius: 7px;
+    border-radius: 25px;
     padding-bottom: 30px;
     margin-bottom: 70px;
 }
@@ -123,14 +123,14 @@
         position: relative;
         top: 0;
         border: solid 1px rgb(236, 236, 236);
-        border-radius: 7px;
+        
     }
 
 
     .content__dark {
         position: relative;
         border: solid 1px #17171A;
-        border-radius: 7px;
+        
     }
 
 

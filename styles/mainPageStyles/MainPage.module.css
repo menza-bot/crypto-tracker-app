@@ -34,6 +34,11 @@
 }
 
 
+.main__marketcap__number { 
+    color:rgb(55, 178, 255)
+}
+
+
 @media screen and (max-width: 1293px) {
     .content {
         width: 90%;

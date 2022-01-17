@@ -4,6 +4,22 @@
     position: relative;
 }
 
+.searchbar__dark {
+    position: relative;
+    top: 18px;
+    display: flex;
+    background-color: #17171A;
+    color: #DFDFDF;
+    border-radius: 8px;
+    padding: 8px;
+    -webkit-box-align: center;
+    cursor: pointer;
+    margin-left: 8px;
+    width: 120px;
+    height: 35px;
+    justify-self: end;
+}
+
 .searchbar {
     position: relative;
     top: 18px;
@@ -45,7 +61,6 @@
     min-height: 140px;
     border-radius: 8px;
     background-color: #FAFAFA;
-    transition: 1s;
     box-shadow: 2px 5px 16px rgb(212, 212, 212);
     padding: 8px 0;
 }
@@ -60,7 +75,6 @@
     min-height: 140px;
     border-radius: 8px;
     background-color: #17171A;
-    transition: 1s;
     padding: 8px 0;
 }
 
@@ -107,8 +121,16 @@
 }
 
 .input__dark::placeholder {
-    color: #DFDFDF;
-    font-size: .9rem
+    color: #c5c5c5;
+    font-size: .9em
+}
+
+.input:focus::placeholder {
+    color: transparent;
+}
+
+.input__dark:focus::placeholder {
+    color: transparent;
 }
 
 .trending__coins__wrapper, .searched__content__wrapper {
@@ -165,6 +187,10 @@
 .trending__coin__wrapper:hover {
     background-color: rgb(240, 240, 240);
     border-radius: 7px;
+}
+
+.trending__title__dark {
+    color: rgb(240, 238, 238);
 }
 
 .img {
@@ -232,7 +258,7 @@
 }
 
 @media screen and (max-width: 992px) {
-    .searchbar {
+    .searchbar, .searchbar__dark {
         display: none;
     }
 

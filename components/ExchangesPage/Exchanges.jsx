@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { fetchExchanges } from '../../store/exchangesSlice'
 import styles from '../../styles/exchangesPageStyles/Exchanges.module.css'
-
+import { SkeletonElement } from '../../skeletonLoading/skeletons/SkeletonElement'
 
 
 
@@ -52,7 +52,7 @@ const Exchanges = ({themeValue}) => {
                             {item.country ? <p className={styles.country}>{item.country ? item.country : '-'}</p> : <p className = {styles.country}>-</p>}
                     </div>
                 </div>
-                ) : null
+                ) : ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((item, id) => <SkeletonElement type = 'content__plate' key={id}/>))
             }
             <div className = {styles.exchanges__inf}>
                 <div className = {styles.show__panel}>

@@ -2,22 +2,14 @@ import React from 'react'
 import styles from '../../styles/trendingPageStyles/TrendingCoins.module.css'
 import { ImFire } from 'react-icons/im'
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { fetchTrendingCoins } from '../../store/trendingSlice'
+import { SkeletonElement } from '../../skeletonLoading/skeletons/SkeletonElement'
 
 
 const TrendingCoins = ({themeValue}) => {
 
 
     const trendingCoins = useSelector(state => state.trendingSlice.trendingCoins)
-    /* const dispatch = useDispatch() */
-
-
-    /* useEffect(() => {
-        dispatch(fetchTrendingCoins())
-    }, []) */
-
+    
 
     return (
         <div className = {styles.wrapper}>
@@ -53,7 +45,7 @@ const TrendingCoins = ({themeValue}) => {
                                         <span className = {styles.rank}>
                                             {item.item.market_cap_rank}
                                         </span>
-                                    </div>) : null
+                                    </div>) : ([1, 2, 3, 4, 5, 6, 7].map((item, key) => <SkeletonElement themeValue = {themeValue} key = {key} type='trending__coin' />))
                             }
                         </div>
             </div>

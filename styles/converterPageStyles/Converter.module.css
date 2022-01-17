@@ -23,7 +23,7 @@
     grid-template-areas: 'input selector-from selector-to'
                             'output-value output-value convert-button';
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 75px auto;
     padding: 20px 0;
 
 }
