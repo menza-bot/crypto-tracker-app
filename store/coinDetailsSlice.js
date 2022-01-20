@@ -29,7 +29,7 @@ export const formatData = (data) => {
     return data.map((item) => {
         return {
             name: unixFormatDate(item[0]),
-            uv: item[1]
+            price: item[1]
         }
     })
 }
@@ -39,41 +39,16 @@ export const formatData = (data) => {
 export const fetchCoinDetails = createAsyncThunk(
     'coinDetailsSlice/fetchCoinDetails',
     async (id) => {
+        try {
 
-        const response = await dataAPI.getCoinDetails(id)
+            const response = await dataAPI.getCoinDetails(id)
+            const data = response.data
 
-        const data = response.data
-
-        const coinMainInf = {
-            name: data.name,
-            symbol: data.symbol,
-            rank: 'Rank #' + data.market_cap_rank,
+            console.log(data)
+            return data
+        } catch (error) {
+            console.log(error)
         }
-
-        const links = {
-            homepage: data.links.homepage[0],
-            blockchain: data.links.blockchain_site[0],
-            forum: data.official_forum_url[0],
-            subreddit: data.links.subreddit_url
-        }
-
-        const marketData = {
-            currentPrice: data.market_data.current_price,
-            marketCap: data.market_data.market_cap,
-            totalVolume: data.market_data.total_volume,
-            priceChangePercentage24h: data.market_data.price_change_percentage_24h,
-            marketCapChangePercentage24h: data.market_data.market_cap_change_percentage_24h,
-            marketData: data.market_data.circulating_supply
-        }
-
-        const description = data.description.en
-
-        const image = data.image.large
-
-        const coinGeckoRank = data.coingecko_rank
-
-        return { coinMainInf, links, marketData, description, image, coinGeckoRank }
-        
     }
 )
 
@@ -150,22 +125,21 @@ const coinDetailsSlice = createSlice({
     },
     extraReducers: {
         [fetchCoinDetails.fulfilled]: (state, {payload}) => {
-            state.coinMainInf = payload.coinMainInf
-            /* state.coinMainInf.symbol = payload.symbol,
-            state.coinMainInf.rank = 'Rank #' + payload.market_cap_rank */
+            state.coinMainInf.name = payload.name
+            state.coinMainInf.symbol = payload.symbol,
+            state.coinMainInf.rank = 'Rank #' + payload.market_cap_rank 
             state.description = payload.description,
-            state.links = payload.links
-            /* state.links.blockchain = payload.links.blockchain_site[0]
+            state.links.blockchain = payload.links.blockchain_site[0]
             state.links.forum = payload.links.official_forum_url[0]
-            state.links.subreddit = payload.links.subreddit_url */
-            state.img = payload.image
-            state.coinGeckoRank = payload.coinGeckoRank
-            state.marketData = payload.marketData
-            /* state.marketData.marketCap = payload.market_data.market_cap
+            state.links.subreddit = payload.links.subreddit_url 
+            state.img = payload.image.large
+            state.coinGeckoRank = payload.coingecko_rank
+            state.marketData.currentPrice = payload.market_data.current_price
+            state.marketData.marketCap = payload.market_data.market_cap
             state.marketData.totalVolume = payload.market_data.total_volume
             state.marketData.priceChangePercentage24h = payload.market_data.price_change_percentage_24h
             state.marketData.marketCapChangePercentage24h = payload.market_data.market_cap_change_percentage_24h
-            state.marketData.coinInformation[2].value = payload.market_data.circulating_supply */
+            state.marketData.coinInformation[2].value = payload.market_data.circulating_supply 
             switch (state.currentCurrency) {
                 case 'USD': 
                     state.currentCurrencySymbol = '$'

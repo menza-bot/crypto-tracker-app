@@ -1,6 +1,7 @@
 .pagination {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1.5fr;
+    display: flex;
+    justify-content: space-between ;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -22,10 +23,11 @@
 .paginator {
     margin: 30px auto;
     padding: 30px;
-    width: 30%;
-    display: grid;
+    width: 350px;
+    display: flex;
     justify-self: center;
-    grid-template-columns: 1fr 6fr 1fr;
+    justify-content: space-between;
+    -webkit-tap-highlight-color: transparent;
 }
 
 

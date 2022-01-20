@@ -5,7 +5,7 @@ import { MemoFiltersBar } from './FiltersBar'
 import { MemoPagination } from './Pagination'
 import { useDispatch, useSelector } from 'react-redux'
 import { SkeletonTitle } from '../../skeletonLoading/skeletons/SkeletonTitle'
-
+import { numberWithCommas } from '../../store/mainPageSlice'
 
 const MainPage = ({themeValue}) => {
 
@@ -22,7 +22,7 @@ const MainPage = ({themeValue}) => {
                     marketCap ? 
                     <div className = {styles.title__wrapper}>
                         <div className = {styles.title}>Today's Cryptocurrency Prices by Crypto App.</div>
-                        <p className = {styles.title__paragraph}>The global crypto market cap is <strong className = {styles.main__marketcap__number}>{state.currentCurrencySymbol} {Math.floor(marketCap).toLocaleString()}</strong>.</p>
+                        <p className = {styles.title__paragraph}>The global crypto market cap is <strong className = {styles.main__marketcap__number}>{state.currentCurrencySymbol} {numberWithCommas(Math.floor(marketCap))}</strong>.</p>
                     </div> : <SkeletonTitle themeValue={themeValue}/>
                 }
             </div>

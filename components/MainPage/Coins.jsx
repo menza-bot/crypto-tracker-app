@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styles from '../../styles/mainPageStyles/Coins.module.css'
-import { fetchCoins } from '../../store/mainPageSlice'
+import { fetchCoins, numberWithCommas } from '../../store/mainPageSlice'
 import { AiOutlineStar } from 'react-icons/ai'
 import { IoMdBookmark } from 'react-icons/io'
 import Link from 'next/link'
@@ -64,10 +64,10 @@ const Coins = ({ coins, currentCurrency, currentCurrencySymbol, currentPage, pag
                                                 </div>
                                             </a>
                                         </Link>
-                                        <p className={styles.price}> {currentCurrencySymbol} {item.current_price ? item.current_price.toLocaleString(undefined, {minimumFractionDigits: 2}) : '-'}</p>
+                                        <p className={styles.price}> {currentCurrencySymbol} {item.current_price ? numberWithCommas(item.current_price) : '-'}</p>
                                         <p className={`${item.price_change_percentage_24h >= 0 ? styles.percent__increase : styles.percent__decrease}`}>{item.price_change_percentage_24h ? item.price_change_percentage_24h.toFixed(2) : '-'}%</p>
-                                        <p className={styles.volume}> {currentCurrencySymbol} {item.total_volume ? item.total_volume.toLocaleString() : '-'}</p>
-                                        <p className={`${styles.market__cap} ${styles.market__cap__adaptive}`}> {currentCurrencySymbol} {item.market_cap ? item.market_cap.toLocaleString() : '-'}</p>
+                                        <p className={styles.volume}> {currentCurrencySymbol} {item.total_volume ? numberWithCommas(item.total_volume) : '-'}</p>
+                                        <p className={`${styles.market__cap} ${styles.market__cap__adaptive}`}> {currentCurrencySymbol} {item.market_cap ? numberWithCommas(item.market_cap) : '-'}</p>
                                     </div>
                                 </div>
                     ) : (tileStyle && !rowStyle ? null : ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((item, id) => <SkeletonElement themeValue = {themeValue} type = 'content__plate' key={id}/>)))

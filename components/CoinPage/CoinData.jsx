@@ -1,6 +1,7 @@
 import React from 'react'
+import { useEffect } from 'react'
 import styles from '../../styles/coinPageStyles/CoinData.module.css'
-
+import { numberWithCommas } from '../../store/mainPageSlice'
 
 
 
@@ -29,7 +30,7 @@ const CoinData = ({state, themeValue}) => {
                                 <p className = {styles.price__title}>     
                                     {state.coinMainInf.name} price is:
                                 </p>
-                                <span className = {styles.current__price}>{state.currentCurrencySymbol} {state.marketData.currentPriceSelected.toLocaleString()}</span>
+                                <span className = {styles.current__price}>{state.currentCurrencySymbol} {numberWithCommas(state.marketData.currentPriceSelected)}</span>
                                 <span className = {`${state.marketData.priceChangePercentage24h >= 0 ? styles.price__increase : styles.price__decrease}`}>{state.marketData.priceChangePercentage24h.toFixed(2)}%</span>
                             </div>
                             <div className = {styles.market__cap__data}>
@@ -38,7 +39,7 @@ const CoinData = ({state, themeValue}) => {
                                         state.marketData.coinInformation.map(item => 
                                             <span className = {`${styles.market__cap__data__item}`}>
                                                 <p className = {styles.informer}>{item.title}</p>
-                                                <p className = {styles.informer__value}>{item.value.toLocaleString()}</p>
+                                                <p className = {styles.informer__value}>{numberWithCommas(item.value)}</p>
                                             </span>
                                     ) : <span className = {styles.disclaimer}>Data is not available</span>
                                 }
@@ -49,7 +50,7 @@ const CoinData = ({state, themeValue}) => {
                                 Object.entries(state.links).map(([key, value]) => <a href = {value} className = {`${themeValue ? styles.link__dark : styles.link}`}>{key}</a>)
                             }
                         </div>
-                    </div> : null
+                    </div> : <div>PO</div>
             }
         </div>
     )

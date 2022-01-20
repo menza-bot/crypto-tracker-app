@@ -60,6 +60,7 @@ const Header = ({themeValue, themeSwitcher}) => {
                         activateSearchModal = {activateSearchModal}
                         deactivateSearchModal = {deactivateSearchModal}
                         themeValue = {themeValue}
+                        enableScroll = {enableScroll}
                     />
                 </div>
                 <AdaptiveMenu 

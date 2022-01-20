@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { fetchExchanges } from '../../store/exchangesSlice'
 import styles from '../../styles/exchangesPageStyles/Exchanges.module.css'
 import { SkeletonElement } from '../../skeletonLoading/skeletons/SkeletonElement'
+import { numberWithCommas } from '../../store/mainPageSlice'
 
 
 
@@ -45,7 +46,7 @@ const Exchanges = ({themeValue}) => {
                                 <span className={styles.title}>{item.name}</span>
                             </p>
                             <p className={styles.trust__score}>{item.trust_score ? item.trust_score : '-'}</p>
-                            <p className={styles.volume}>{item.trade_volume_24h_btc.toFixed(2)}</p>
+                            <p className={styles.volume}>{numberWithCommas(item.trade_volume_24h_btc.toFixed(2))}</p>
                             {item.year_established ?  <p className={styles.year__established}>
                                                             {item.year_established}
                                                         </p> : <p className={styles.year__established}>-</p>}

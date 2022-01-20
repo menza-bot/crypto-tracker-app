@@ -3,7 +3,9 @@ import dataAPI from "../fetchAPI/fetchData";
 
 
 
-
+export const numberWithCommas = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 
 export const fetchCoins = createAsyncThunk(
@@ -60,6 +62,7 @@ const mainPageSlice = createSlice({
         currentCurrency: 'USD',
         currentCurrencySymbol: '$',
         listOfCurrencies: {'United States Dollar': 'USD', 'Euro': 'EUR', 'Pound Sterling': 'GBP', 'Russian Ruble': 'RUB'},
+        listOfSymbols: [{ USD: '$' }, { EUR: '€' }, { GBP: '£' }, { RUB: '₽' }],
         coinsHeader: ['n', 'Name', 'Price', '%', 'Volume', 'Market Cap'],
         coinsInPage: [],
         pageNumbers: [],

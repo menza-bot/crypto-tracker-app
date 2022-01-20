@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { fetchChartData, fetchCoinDetails, setCurrentDaysAmount } from '../../store/coinDetailsSlice'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
+import { numberWithCommas } from '../../store/mainPageSlice'
 import styles from '../../styles/coinPageStyles/CoinPage.module.css'
 import { MemoSwapAndStats } from './SwapAndStats'
 import { MemoChartData } from './ChartData'
@@ -16,7 +17,6 @@ const CoinPage = ({themeValue}) => {
 
     const dispatch = useDispatch()
     const router = useRouter()
-    console.log(router.query.id)
     const state = useSelector(state => state.coinDetailsSlice)
     const [activeButton, setActiveButton] = useState('1D')
 
@@ -28,8 +28,8 @@ const CoinPage = ({themeValue}) => {
 
 
     useEffect(() => {
-        console.log(router.query.id && router.query.id !== undefined)
         if (router.query.id) {
+            console.log(router.query.id)
             dispatch(fetchCoinDetails(router.query.id))
             dispatch(fetchChartData({id: router.query.id, vs_currency: state.currentCurrency.toLowerCase(), days_amount: state.currentDaysAmount}))
         }

@@ -10,7 +10,7 @@ import { clearSearchBarData } from '../../store/mainPageSlice'
 import  debounce  from 'lodash.debounce'
 
 
-export const SearchBar = ({ trendingCoins, isActiveModal, activateSearchModal, deactivateSearchModal, themeValue }) => {
+export const SearchBar = ({ trendingCoins, isActiveModal, activateSearchModal, deactivateSearchModal, themeValue, enableScroll }) => {
 
     const [inputValue, setInputValue] = useState('')
     const searchedCoins = useSelector((state) => state.mainPageSlice.searchedCoins)
@@ -51,7 +51,7 @@ export const SearchBar = ({ trendingCoins, isActiveModal, activateSearchModal, d
                     <div className={styles.input__wrapper}> 
                         <input type="text" value={inputValue} onChange={handleChange} className={themeValue ? styles.input__dark : styles.input} placeholder='What do you want to find?' />
                     </div>
-                    <div className={styles.modal__close__icon} onClick = {() => {deactivateSearchModal(), setInputValue('')}}>
+                    <div className={styles.modal__close__icon} onClick = {() => {deactivateSearchModal(), setInputValue(''), enableScroll()}}>
                         <IconContext.Provider value={{ color: '#919191', size: '15px', marginTop: '2px' }}>
                             <IoIosCloseCircle />
                         </IconContext.Provider>

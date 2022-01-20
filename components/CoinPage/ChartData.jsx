@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { ResponsiveContainer, LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
+import { ResponsiveContainer, LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Area } from 'recharts'
+import { useWindowDimensions } from '../../customHooks/useWindowsDimentions'
 import styles from '../../styles/coinPageStyles/ChartData.module.css'
 
 
@@ -9,37 +10,12 @@ import styles from '../../styles/coinPageStyles/ChartData.module.css'
 const ChartData = ({chartData, name, daysAmountData, switchDayAmount, activeButton, themeValue}) => {
 
 
-    const [currentChartHeight, setCurrentChartHeight] = useState(450)
-    const [currentChartWidth, setCurrentChartWidth] = useState('97%') 
+    
+    const {width, height} = useWindowDimensions()
     const currentWidth = window.innerWidth
     
     
     useEffect(() => {
-
-
-            if (currentWidth <= 1400 && currentWidth > 992) {
-                setCurrentChartHeight(350)
-            }
-
-            if (currentWidth <= 992) {
-                setCurrentChartHeight(275) 
-                setCurrentChartWidth('100%')
-            }
-
-
-            /* if (currentWidth <= 760) {
-                setCurrentChartWidth('100%')
-            }
-
-            if (currentWidth <= 500 && currentWidth > 350) {
-                setCurrentChartHeight(230)
-                setCurrentChartWidth('100%')
-            }
-
-            if (currentWidth <= 350 ) {
-                setCurrentChartHeight(195)
-                setCurrentChartWidth('100%')
-            } */
     }, [])
     
 
@@ -68,15 +44,7 @@ const ChartData = ({chartData, name, daysAmountData, switchDayAmount, activeButt
                     <div className = {styles.data}>
                         {   
                             chartData ?
-                                <ResponsiveContainer width = {currentChartWidth} height = {currentChartHeight}>
-                                    <LineChart data={chartData} fontSize={12} yAxisId = {10}>
-                                        <Line  type="linear" dataKey="uv" stroke="red" strokeWidth = {2} dot ={false} />
-                                        <CartesianGrid stroke="#ccc" strokeDasharray="2 1"  vertical = {false} />
-                                        <XAxis dataKey="name" tickLine = {false} padding = {50} /> 
-                                        <YAxis  axisLine = {false} width = {40} domain={['auto', 'auto']}/>
-                                        <Tooltip />
-                                    </LineChart>  
-                                </ResponsiveContainer> : <div>None</div>
+                                null : 1
                         }
                     </div>
                 </div>
